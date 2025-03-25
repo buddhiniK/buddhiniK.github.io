@@ -76,7 +76,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: var(--navy);
     color: var(--slate);
-    font-family: var(--font-sans);
+    font-family: var(--font-quicksand);
     font-size: var(--fz-xl);
     line-height: 1.3;
 
@@ -176,7 +176,7 @@ const GlobalStyle = createGlobalStyle`
 
   .medium-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 60px);
+    font-size: clamp(20px, 8vw, 40px);
   }
 
   .numbered-heading {

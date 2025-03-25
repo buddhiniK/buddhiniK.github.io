@@ -24,6 +24,15 @@ import SFMonoRegularItalicWoff2 from '@fonts/SFMono/SFMono-RegularItalic.woff2';
 import SFMonoSemiboldItalicWoff from '@fonts/SFMono/SFMono-SemiboldItalic.woff';
 import SFMonoSemiboldItalicWoff2 from '@fonts/SFMono/SFMono-SemiboldItalic.woff2';
 
+import QuicksandBoldWoff from '@fonts/Quicksand/Quicksand-Bold-700.woff';
+import QuicksandLightWoff from '@fonts/Quicksand/Quicksand-Light-300.woff';
+import QuicksandMediumWoff from '@fonts/Quicksand/Quicksand-Medium-500.woff';
+import QuicksandRegularWoff from '@fonts/Quicksand/Quicksand-Regular-400.woff';
+import QuicksandBoldWoff2 from '@fonts/Quicksand/Quicksand-Bold-700.woff2';
+import QuicksandLightWoff2 from '@fonts/Quicksand/Quicksand-Light-300.woff2';
+import QuicksandMediumWoff2 from '@fonts/Quicksand/Quicksand-Medium-500.woff2';
+import QuicksandRegularWoff2 from '@fonts/Quicksand/Quicksand-Regular-400.woff2';
+
 const calibreNormalWeights = {
   400: [CalibreRegularWoff, CalibreRegularWoff2],
   500: [CalibreMediumWoff, CalibreMediumWoff2],
@@ -46,6 +55,13 @@ const sfMonoItalicWeights = {
   600: [SFMonoSemiboldItalicWoff, SFMonoSemiboldItalicWoff2],
 };
 
+const quicksandNormalWeights = {
+  700: [QuicksandBoldWoff, QuicksandBoldWoff2],
+  500: [QuicksandMediumWoff, QuicksandMediumWoff2],
+  400: [QuicksandRegularWoff, QuicksandRegularWoff2],
+  300: [QuicksandLightWoff, QuicksandLightWoff2],
+};
+
 const calibre = {
   name: 'Calibre',
   normal: calibreNormalWeights,
@@ -56,6 +72,11 @@ const sfMono = {
   name: 'SF Mono',
   normal: sfMonoNormalWeights,
   italic: sfMonoItalicWeights,
+};
+
+const quicksand = {
+  name: 'Quicksand',
+  normal: quicksandNormalWeights,
 };
 
 const createFontFaces = (family, style = 'normal') => {
@@ -86,8 +107,10 @@ const calibreItalic = createFontFaces(calibre, 'italic');
 const sfMonoNormal = createFontFaces(sfMono);
 const sfMonoItalic = createFontFaces(sfMono, 'italic');
 
+const quicksandNormal = createFontFaces(quicksand);
+
 const Fonts = css`
-  ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic}
+  ${calibreNormal + calibreItalic + sfMonoNormal + sfMonoItalic + quicksandNormal}
 `;
 
 export default Fonts;

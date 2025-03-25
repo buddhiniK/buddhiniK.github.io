@@ -3,18 +3,17 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+// import { email } from '@config';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
-  height: 100vh;
   padding: 0;
 
-  @media (max-height: 700px) and (min-width: 700px), (max-width: 360px) {
-    height: auto;
-    padding-top: var(--nav-height);
+  @media (max-width: 480px) and (min-height: 700px) {
+    padding-bottom: 10vh;
   }
 
   h1 {
@@ -30,7 +29,7 @@ const StyledHeroSection = styled.section`
   }
 
   h3 {
-    margin-top: 5px;
+    margin-top: 10px;
     color: var(--slate);
     line-height: 0.9;
   }
@@ -59,33 +58,34 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const one = <h1 style={{ marginBottom: 0, marginTop: '3vh' }}>Hi, I'm</h1>;
+  const two = (
+    <h2 className="big-heading">
+      <strong>Buddhini Katuwandeniya</strong>
+    </h2>
+  );
+  const three = <h3 className="medium-heading">Passionate Data Enthusiast</h3>;
   const four = (
     <>
-      <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+      <p style={{ marginTop: '3vh' }}>
+        I’m an enthusiastic Data Engineer who holds a{' '}
+        <a href="https://cmb.ac.lk/" target="_blank" rel="noreferrer">
+          B.Sc. (Hons) in Applied Statistics from the University of Colombo, Sri Lanka.
+        </a>{' '}
+        I aspire to excel in the field of data engineering and visualization, leveraging analytical
+        insights to drive informed decision-making. Currently, I work at{' '}
+        <a href="https://www.acumatica.com/" target="_blank" rel="noreferrer">
+          Acumatica
         </a>
-        .
+        , where I help multiple departments identify key performance indicators (KPIs) and key
+        metrics, enabling data-driven strategies. My focus lies in building scalable data pipelines,
+        cloud-based solutions, and advanced analytics to enhance business intelligence and
+        operational efficiency.
       </p>
     </>
   );
-  const five = (
-    <a
-      className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
-      target="_blank"
-      rel="noreferrer">
-      Check out my course!
-    </a>
-  );
 
-  const items = [one, two, three, four, five];
+  const items = [one, two, three, four];
 
   return (
     <StyledHeroSection>
